@@ -1,54 +1,54 @@
 @font-face {
-  src: url('./Inter/Inter-Medium.ttf');
+  src: url('./Inter/Inter-Medium.ttf') format('truetype');
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  src: url('./Inter/Inter-Regular.ttf');
+  src: url('./Inter/Inter-Regular.ttf') format('truetype');
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  src: url('./Roboto/Roboto-Black.ttf');
+  src: url('./Roboto/Roboto-Black.ttf') format('truetype');
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  src: url('./Roboto/Roboto-Medium.ttf');
+  src: url('./Roboto/Roboto-Medium.ttf') format('truetype');
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  src: url('./Roboto/Roboto-Regular.ttf');
+  src: url('./Roboto/Roboto-Regular.ttf') format('truetype');
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  src: url('./Roboto_Slab/RobotoSlab-Regular.ttf');
+  src: url('./Roboto_Slab/RobotoSlab-Regular.ttf') format('truetype');
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  src: url('./Roboto_Slab/RobotoSlab-Bold.ttf');
+  src: url('./Roboto_Slab/RobotoSlab-Bold.ttf') format('truetype');
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  src: url('./Source_Sans_Pro/SourceSansPro-Regular.ttf');
+  src: url('./Source_Sans_Pro/SourceSansPro-Regular.ttf') format('truetype');
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-style: normal;
