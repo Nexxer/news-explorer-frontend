@@ -1,7 +1,7 @@
 import React from 'react';
-import './Preloader.css';
+import './PreLoader.css';
 
-function Preloader() {
+function PreLoader() {
   return (
     <div className="preloader">
       <i className="preloader__spin" />
@@ -10,4 +10,4 @@ function Preloader() {
   );
 }
 
-export default Preloader;
+export default PreLoader;

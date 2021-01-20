@@ -2,7 +2,7 @@ import React from 'react';
 import './NewsCardList.css';
 import NewsCard from '../NewsCard/NewsCard';
 import { useLocation } from "react-router-dom";
-import Preloader from '../Preloader/Preloader';
+import PreLoader from '../PreLoader/PreLoader';
 import NotFound from '../NotFound/NotFound';
 import Test from '../Test/Test';
 
@@ -25,7 +25,7 @@ function NewsCardList(props) {
         <Test {...props} />
       </ul>
       <button className="news-list__more-btn" type="button">Показать ещё</button>
-      {props.isPreloaderShown ? <Preloader /> : ''}
+      {props.isPreloaderShown ? <PreLoader /> : ''}
       {props.isNotFoundShown ? <NotFound /> : ''}
     </section>
   );
