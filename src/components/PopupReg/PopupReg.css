@@ -1,0 +1,23 @@
+.popup__container {
+  align-items: flex-start;
+  align-self: center;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 43px 36px 51px;
+  position: relative;
+  width: 430px;
+}
+
+@media screen and (max-width: 500px) {
+  .popup__title {
+    width: 90%;
+  }
+  .popup__container {
+    max-width: 80%;
+  }
+}

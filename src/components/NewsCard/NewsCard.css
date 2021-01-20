@@ -1,0 +1,230 @@
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  filter: drop-shadow(0px 2px 2px rgba(8, 29, 45, 0.1));
+  line-height: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__abstract {
+  color: #1A1B22;
+  display: -webkit-box;
+  font-size: 16px;
+  line-height: 1.375;
+  margin: 0 0 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.card__cap {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px 24px;
+}
+
+.card__date {
+  color: #B6BCBF;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  line-height: 1.333;
+  margin: 0 0 12px;
+}
+
+.card__delete-btn {
+  background-image: url(../../images/TrashLight.svg);
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  cursor: pointer;
+  height: 40px;
+  padding: 0;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  transition-duration: 0.5s;
+  width: 40px;
+  outline: none;
+}
+
+.card__delete-btn:after {
+  background-color: #FFF;
+  border-radius: 10px;
+  color: #000;
+  content: "Убрать из сохранённых";
+  font-size: 12px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  right: 45px;
+  top: 0;
+  visibility: hidden;
+  width: 159px;
+  z-index: 5;
+}
+
+.card__delete-btn:hover {
+  background-image: url(../../images/TrashDark.svg);
+}
+
+.card__delete-btn:hover:after {
+  visibility: visible;
+}
+
+.card__key-word {
+  background-color: #FFF;
+  border-radius: 10px;
+  color: #000;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  left: 36px;
+  line-height: 40px;
+  margin: 0;
+  max-width: 50%;
+  overflow: hidden;
+  padding: 0 12px;
+  position: absolute;
+  text-overflow: ellipsis;
+  top: 24px;
+}
+
+.card__photo {
+  height: 272px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card__save-btn {
+  background-image: url(../../images/save-inactive.png);
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  cursor: pointer;
+  height: 40px;
+  padding: 0;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  transition-duration: 0.5s;
+  width: 40px;
+}
+
+.card__save-btn:after {
+  background-color: #FFF;
+  border-radius: 10px;
+  color: #000;
+  content: "Войдите, чтобы сохранять статьи";
+  font-size: 10px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  right: 45px;
+  top: 0;
+  visibility: hidden;
+  width: 182px;
+}
+
+.card__save-btn:hover {
+  background-image: url(../../images/save-active.png);
+}
+
+.card__save-btn:hover:after {
+  visibility: visible;
+}
+
+.card__save-btn_blue {
+  background-image: url(../../images/save-blue.png);
+}
+
+.card__save-btn_login:after {
+  content: none;
+}
+
+.card__source {
+  color: #B6BCBF;
+  font-family: Roboto Slab;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.card__title {
+  color: #1A1B22;
+  font-family: Roboto Slab;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.153;
+  margin: 0 0 16px;
+}
+
+@media screen and (max-width: 500px) {
+  .card__abstract {
+    margin-bottom: 8px;
+  }
+  .card__cap {
+    padding: 16px 16px 17px;
+  }
+  .card__date {
+    margin-bottom: 10px;
+  }
+  .card__delete-btn {
+    right: 16px;
+    top: 16px;
+  }
+  .card__key-word {
+    left: 16px;
+    padding: 12px 12px;
+    top: 16px;
+  }
+  .card__photo {
+    height: 196px;
+  }
+  .card__save-btn {
+    right: 16px;
+    top: 16px;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .card__abstract {
+    height: 88px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .card__cap {
+    padding: 16px 16px;
+  }
+  .card__delete-btn {
+    right: 8px;
+    top: 8px;
+  }
+  .card__delete-btn:after {
+    display: none;
+  }
+  .card__key-word {
+    left: 8px;
+    padding: 12px 12px;
+    top: 8px;
+  }
+  .card__photo {
+    height: 150px;
+  }
+  .card__save-btn {
+    right: 8px;
+    top: 8px;
+  }
+  .card__title {
+    font-size: 22px;
+    line-height: 1.09;
+    margin-bottom: 10px;
+  }
+}

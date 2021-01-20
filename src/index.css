@@ -1,2 +1,14 @@
-@import url("./vendor/normalize.css");
-@import url("./vendor/fonts/fonts.css");
+.body {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  background-color: #FFF;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.root {
+  min-width: 300px;
+  margin: 0 auto;
+  width: 100%;
+}
