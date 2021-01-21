@@ -91,9 +91,10 @@ function App() {
             <Header
               onMenuClick={toggleMenu}
               isMenuShown={isMenu}
-              isLogin={true}
+              isLogin={isLogin}
               isFontDark={true}
               onAuthClick={handleOpenAuth}
+              makelogin={togglelogin}
             />
             <SavedNewsHeader />
           </div>
@@ -112,6 +113,7 @@ function App() {
               isFontDark={false}
               onAuthClick={handleOpenAuth}
               closeMenuOnclick={closeMenu}
+              makelogin={togglelogin}
             />
             <SearchForm
               onSearch={showResut}

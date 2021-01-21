@@ -26,7 +26,7 @@ function Navigation(props) {
       }
       {
         props.isLogin ?
-          <button className={props.isFontDark ? "nav-list__btn nav-list__btn_dark" : "nav-list__btn"} onClick={props.isLogin}>
+          <button className={props.isFontDark ? "nav-list__btn nav-list__btn_dark" : "nav-list__btn"} onClick={props.makelogin}>
             Грета
             <img className="nav-list__exit" src={props.isFontDark && !props.isMenuShown ? exitIconDark : exitIcon} alt="выйти" />
           </button>
