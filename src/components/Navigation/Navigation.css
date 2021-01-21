@@ -38,18 +38,16 @@
   color: inherit;
   margin: 14px 33px -16px 0;
   text-decoration: none;
+  color: #B6BCBF;
 }
 
 .nav-list__item_active {
   border-bottom: 3px solid;
+  color: inherit;
 }
 
 .nav-list__item_dark {
   color: #1A1B22;
-}
-
-.nav-list__item_light {
-  color: #B6BCBF;
 }
 
 @media screen and (max-width: 650px) {

@@ -17,18 +17,18 @@ function Navigation(props) {
       <NavLink className={!props.isFontDark && !(location.pathname === '/') ? "nav-list__item nav-list__item_light" : "nav-list__item"}
         exact to={'/'}
         activeClassName="nav-list__item_active"
-        onClick={props.onMenuClick}>Главная</NavLink>
+        onClick={props.closeMenuOnclick}>Главная</NavLink>
       {
         props.isLogin && <NavLink className={!props.isFontDark && !(location.pathname === '/saved-news') ? "nav-list__item nav-list__item_light" : "nav-list__item"}
           activeClassName="nav-list__item_active"
           exact to={'/saved-news'}
-          onClick={props.onMenuClick}>Сохранённые статьи</NavLink>
+          onClick={props.closeMenuOnclick}>Сохранённые статьи</NavLink>
       }
       {
-        props.isUserlogin ?
-          <button className={props.isFontDark ? "nav-list__btn nav-list__btn_dark" : "nav-list__btn"} onClick={props.onMenuClick}>
+        props.isLogin ?
+          <button className={props.isFontDark ? "nav-list__btn nav-list__btn_dark" : "nav-list__btn"} onClick={props.isLogin}>
             Грета
-                        <img className="nav-list__exit" src={props.isFontDark && !props.isMenuShown ? exitIconDark : exitIcon} alt="выйти" />
+            <img className="nav-list__exit" src={props.isFontDark && !props.isMenuShown ? exitIconDark : exitIcon} alt="выйти" />
           </button>
           :
           <button className="nav-list__btn" onClick={handleAuthClick}>Авторизоваться</button>
