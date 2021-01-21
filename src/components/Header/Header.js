@@ -4,7 +4,6 @@ import Navigation from '../Navigation/Navigation';
 
 function Header(props) {
 
-
   return (
     <div className={props.isFontDark ? "header__container header__container_dark" : "header__container"}>
       <header className={props.isMenuShown ? "header header_main" : "header"}>

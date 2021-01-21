@@ -9,9 +9,11 @@ import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import PopupReg from '../PopupReg/PopupReg';
 import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import React, { useCallback, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 
 function App() {
+
+
   const [result, setResult] = useState(false);
   const [isPreloader, setPreloader] = useState(false);
   const [isNotFound, setNotFound] = useState(false);
@@ -19,6 +21,7 @@ function App() {
   const [isPopupReg, setPopupReg] = useState(false);
   const [isMenu, setMenu] = useState(false);
   const [isLogin, setLogin] = useState(false);
+  const history = useHistory();
 
   const showResut = useCallback(() => {
     setResult(!result);
@@ -82,6 +85,13 @@ function App() {
     });
   }, [closeAllPopups]);
 
+  const handleLogout = useCallback(() => {
+    setResult(false);
+    setMenu(false);
+    setLogin(false);
+    history.push('/');
+  }, [history]);
+
   return (
     <>
       <Switch>
@@ -95,6 +105,7 @@ function App() {
               isFontDark={true}
               onAuthClick={handleOpenAuth}
               makelogin={togglelogin}
+              onLogoutClick={handleLogout}
             />
             <SavedNewsHeader />
           </div>

@@ -42,13 +42,14 @@
   box-shadow: none;
   cursor: pointer;
   height: 40px;
-  padding: 0;
+  padding: 8px;
   position: absolute;
   right: 24px;
   top: 24px;
-  transition-duration: 0.5s;
   width: 40px;
   outline: none;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card__delete-btn:after {

@@ -2,7 +2,6 @@ import React from 'react';
 import About from '../About/About';
 import NewsCardList from '../NewsCardList/NewsCardList';
 
-// function Main({ areResultsShown, makelogin, isPreloaderShown, showAndHideNotFound, isNotFoundShown, isUserlogin, showAndHidePreloader }) {
 function Main(props) {
 
   return (

@@ -24,12 +24,19 @@
   width: 168px;
 }
 
+.search__btn:hover {
+  background: #347EFF;
+}
+
+.search__btn:focus {
+  background: #2A65CC;
+}
+
 .search__form {
   position: relative;
 }
 
 .search__input {
-  backdrop-filter: blur(8px);
   background: #fff;
   border: 1px solid #D1D2D6;
   border-radius: 100px;
@@ -42,6 +49,10 @@
   padding: 0 24px;
   position: relative;
   width: 100%;
+}
+
+.search__input:focus {
+  box-shadow: 0 0 15px 0 #2F71E5
 }
 
 .search__subtitle {
