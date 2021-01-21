@@ -4,7 +4,6 @@ import NewsCard from '../NewsCard/NewsCard';
 import { useLocation } from "react-router-dom";
 import PreLoader from '../PreLoader/PreLoader';
 import NotFound from '../NotFound/NotFound';
-import Test from '../Test/Test';
 
 function NewsCardList(props) {
   const location = useLocation();
@@ -22,7 +21,6 @@ function NewsCardList(props) {
         <NewsCard isUserlogin={props.isLogin} isItSavedNewsPage={isSavedNewsOpen} />
         <NewsCard isUserlogin={props.isLogin} isItSavedNewsPage={isSavedNewsOpen} />
         <NewsCard isUserlogin={props.isLogin} isItSavedNewsPage={isSavedNewsOpen} />
-        <Test {...props} />
       </ul>
       <button className="news-list__more-btn" type="button">Показать ещё</button>
       {props.isPreloaderShown ? <PreLoader /> : ''}
