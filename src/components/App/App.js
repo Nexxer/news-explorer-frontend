@@ -125,6 +125,7 @@ function App() {
               onAuthClick={handleOpenAuth}
               closeMenuOnclick={closeMenu}
               makelogin={togglelogin}
+              onLogoutClick={handleLogout}
             />
             <SearchForm
               onSearch={showResut}
