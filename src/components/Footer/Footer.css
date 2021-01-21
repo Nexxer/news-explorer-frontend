@@ -9,6 +9,7 @@
 .footer__link {
   cursor: pointer;
   margin-right: 24px;
+  display: flex;
 }
 
 .footer__link:last-of-type {
@@ -17,10 +18,13 @@
 
 .footer__link_text {
   margin: 0 56px 0 -16px;
+  display: flex;
 }
 
-.footer__link-container {
-  display: flex;
+
+
+.footer__icon {
+  margin-right: 28px;
 }
 
 .footer__links {
@@ -79,9 +83,7 @@
   }
   .footer__link_text {
     margin: 0 0 15px;
-  }
-  .footer__link-container:first-child {
-    display: block;
+    flex-direction: column;
   }
   .footer__links {
     justify-content: space-between;

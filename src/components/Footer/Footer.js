@@ -10,29 +10,21 @@ function Footer() {
       <p className="footer_copyright">© 2021 Supersite, Powered by News API</p>
       <nav className="footer-nav-links">
         <ul className="footer__links">
-          <div className="footer__link-container">
-            <li className="footer__link_text">
-              <NavLink className="footer-nav-link" to='/'>Главная</NavLink>
-            </li>
-            <li className="footer__link_text">
-              <a className="footer-nav-link" href='https://praktikum.yandex.ru'>Яндекс.Практикум</a>
-            </li>
-          </div>
-          <div className="footer__link-container">
-            <li className="footer__link">
-              <a href='https://github.com/Nexxer'>
-                <img className="footer__icon" src={gitIcon} alt="github" />
-              </a>
-            </li>
-            <li className="footer__link">
-              <a href='https://www.facebook.com/nekker.nike'>
-                <img className="footer__icon" src={fbIcon} alt="facebook" />
-              </a>
-            </li>
-          </div>
+          <li className="footer__link_text">
+            <NavLink className="footer-nav-link" to='/'>Главная</NavLink>
+            <a className="footer-nav-link" href='https://praktikum.yandex.ru'>Яндекс.Практикум</a>
+          </li>
+          <li className="footer__link">
+            <a href='https://github.com/Nexxer'>
+              <img className="footer__icon" src={gitIcon} alt="github" />
+            </a>
+            <a href='https://www.facebook.com/nekker.nike'>
+              <img className="footer__icon" src={fbIcon} alt="facebook" />
+            </a>
+          </li>
         </ul>
       </nav>
-    </footer>
+    </footer >
   );
 }
 
