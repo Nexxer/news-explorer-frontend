@@ -1,0 +1,49 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  padding-top: 80px;
+  text-align: center;
+  width: 24.9%;
+}
+
+.not-found__img {
+  animation: spin 4.75s infinite linear;
+  animation-play-state: paused;
+  height: 96px;
+  margin: 0 auto 24px;
+  object-fit: cover;
+  width: 96px;
+}
+
+.not-found__img:hover {
+  animation-play-state: running;
+}
+
+.not-found__subtitle {
+  color: #B6BCBF;
+  font-size: 18px;
+  line-height: 1.333;
+  margin: 0;
+}
+
+.not-found__title {
+  color: #1A1B22;
+  font-family: Roboto Slab;
+  font-size: 26px;
+  line-height: 1.153;
+  margin: 0 0 16px;
+}
+
+@media screen and (max-width: 560px) {
+  .not-found {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .not-found {
+    width: 40%;
+  }
+}
