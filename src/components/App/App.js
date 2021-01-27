@@ -230,9 +230,9 @@ function App() {
     localStorage.setItem('user', JSON.stringify(data));
   };
 
-  const setSavedNewsToStorage = useCallback((news) => {
+  const setSavedNewsToStorage = (news) => {
     localStorage.setItem('savedNews', JSON.stringify(news));
-  },[])
+  };
 
   const handleSaveArticle = useCallback((article) => {
     addArticleToSavedNews(article)
@@ -246,7 +246,7 @@ function App() {
         console.log(err);
       });
   },
-    [setSavedNewsToStorage],
+    [savedNewsCards],
   );
 
   const handleDeleteArticle = useCallback((link) => {
@@ -261,10 +261,8 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, [savedNewsCards, setSavedNewsToStorage, setSavedNewsCards]
+  }, [savedNewsCards]
   );
-
-
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -317,6 +315,7 @@ function App() {
           isUserlogin={true}
           savedNews={savedNewsCards}
           delCard={handleDeleteArticle}
+          closeMenuOnclick={closeMenu}
         />
 
         <Route path="*">
