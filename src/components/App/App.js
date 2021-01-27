@@ -13,7 +13,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { getArticlesFromNewsApi } from './../../utils/NewsApi';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
-import { registration, onLogin, getUserDataFromDataBase, getSavedNewsFromDataBase, addArticleToSavedNews, deleteArticleToSavedNews } from '../../utils/apiLogin'
+import { registration, onLogin, getUserDataFromDataBase, getSavedNewsFromDataBase, addArticleToSavedNews, deleteArticleToSavedNews } from '../../utils/MainApi'
 
 function App() {
   const [isResult, setResult] = useState(false);
