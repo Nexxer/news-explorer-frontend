@@ -5,7 +5,7 @@
   padding-bottom: 80px;
   padding-top: 80px;
   text-align: center;
-  width: 24.9%;
+  background-color: #F5F6F7;
 }
 
 .not-found__img {
@@ -25,7 +25,8 @@
   color: #B6BCBF;
   font-size: 18px;
   line-height: 1.333;
-  margin: 0;
+  max-width: 340px;
+  margin: 0 auto;
 }
 
 .not-found__title {
@@ -34,16 +35,4 @@
   font-size: 26px;
   line-height: 1.153;
   margin: 0 0 16px;
-}
-
-@media screen and (max-width: 560px) {
-  .not-found {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .not-found {
-    width: 40%;
-  }
 }

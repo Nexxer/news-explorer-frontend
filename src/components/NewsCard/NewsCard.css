@@ -16,6 +16,7 @@
   line-height: 1.375;
   margin: 0 0 18px;
   overflow: hidden;
+  height: 84px;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
@@ -96,7 +97,9 @@
   top: 24px;
 }
 
-.card__photo {
+.card__link {
+  text-decoration: none;
+}.card__photo {
   height: 272px;
   object-fit: cover;
   width: 100%;
@@ -115,6 +118,7 @@
   top: 24px;
   transition-duration: 0.5s;
   width: 40px;
+  outline: none;
 }
 
 .card__save-btn:after {
@@ -145,6 +149,11 @@
   background-image: url(../../images/save-blue.png);
 }
 
+.card__save-btn_blue:hover {
+  background-image: url(../../images/save-blue.png);
+  opacity: 0.9;
+}
+
 .card__save-btn_login:after {
   content: none;
 }
@@ -165,6 +174,8 @@
   font-weight: 400;
   line-height: 1.153;
   margin: 0 0 16px;
+  overflow: hidden;
+  height: 89px;
 }
 
 @media screen and (max-width: 500px) {

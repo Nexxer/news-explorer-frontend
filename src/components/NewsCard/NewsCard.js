@@ -1,20 +1,41 @@
 import React, { useCallback } from 'react';
 import './NewsCard.css';
-import newsImg from '../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png';
+import { useLocation } from "react-router-dom";
+import noPhoto from '../../images/NoPhoto.png';
 
-function NewsCard({ isUserlogin, isItSavedNewsPage }) {
-  const [isSaved, setSaved] = React.useState(false);
+function NewsCard(props) {
+  const location = useLocation();
+  const isSavedNewsOpen = (location.pathname === '/saved-news');
+  const source = props.card.source
+  const keyword = props.card.keyword
+  const title = props.card.title
+  const text = props.card.text
+  const date = props.card.date
+  const link = props.card.link
+  const image = props.card.image
+
+  let isLiked = Array.isArray(props.savedCardArr) ? props.savedCardArr.some(i => i.link === link) : false;
 
   const toggleSaveCard = useCallback(() => {
-    setSaved(!isSaved);
-  }, [isSaved]);
+    if (!props.isLogin) {
+      return console.log('error Auth!!!');
+    }
+    if (isLiked || isSavedNewsOpen) {
+      isLiked = false;
+      return props.delCard(link);
+    }
+    props.saveCard({ source, keyword, title, text, date, link, image });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    isLiked = true;
+  }, [isLiked]);
+
   return (
     <li>
       <figure className="card">
-        {isItSavedNewsPage ? (
+        {props.isItSavedNewsPage ? (
           <>
-            <button type="button" className="card__delete-btn" />
-            <p className="card__key-word">Тема</p>
+            <button type="button" className="card__delete-btn" onClick={toggleSaveCard} />
+            <p className="card__key-word">{keyword}</p>
           </>
         )
 
@@ -22,26 +43,25 @@ function NewsCard({ isUserlogin, isItSavedNewsPage }) {
           <button
             type="button"
             onClick={toggleSaveCard}
-            className={isUserlogin ?
-              (isSaved ?
+            className={props.isLogin ?
+              (isLiked ?
                 "card__save-btn card__save-btn_login card__save-btn_blue"
                 : "card__save-btn card__save-btn_login"
               ) : "card__save-btn"
             }
-            disabled={isUserlogin ? false : true} />
+            disabled={props.isLogin ? false : true} />
         }
-        <img className="card__photo" src={newsImg} alt="фото новости" />
+        <a href={link} className="card__link">
+          <img id="newsPhoto" className="card__photo" src={image ? image : noPhoto} alt="фото новости" />
 
-        <figcaption className="card__cap">
-          <p className="card__date">32 февраля, 2022</p>
-          <h2 className="card__title">Какой-то заголовок</h2>
-          <p className="card__abstract">Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Donec varius velit diam, at dictum mi blandit nec.
-          Donec lobortis placerat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius velit diam, at dictum mi blandit nec. Donec lobortis placerat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius velit diam, at dictum mi blandit nec. Donec lobortis placerat.</p>
-          <p className="card__source">Правда</p>
-        </figcaption>
+          <figcaption className="card__cap">
+            <p className="card__date">{date}</p>
+            <h2 className="card__title">{title}</h2>
+            <p className="card__abstract">{text}</p>
+            <p className="card__source">{source}</p>
+          </figcaption>
+        </a>
+
       </figure>
     </li>
   );

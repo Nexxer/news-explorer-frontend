@@ -1,0 +1,25 @@
+.not-found-page {
+  text-align: center;
+  color: rgb(170, 170, 170);
+  font-size: 30px;
+}
+
+.not-found-page__title {
+  font-size: 200px;
+  margin: 0;
+  color: #000;
+  text-shadow: -1px -1px 1px #5d82a5, 1px 1px 1px #975353;
+}
+
+.not-found-page__text {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 450px) {
+  .not-found-page {
+    font-size: 20px;
+  }
+  .not-found__title {
+    font-size: 100px;
+  }
+}
