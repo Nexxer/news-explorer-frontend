@@ -58,12 +58,12 @@ function NewsCardList(props) {
         <section className="content__results">
           {isSavedNewsOpen ? '' : <h2 className="result__title">Результаты поиска</h2>}
           <ul className="cards">
-            {cardsToRender.map((card, index) => {
+            {cardsToRender.map((card) => {
               return (
                 <NewsCard
                   isUserlogin={props.isLogin}
                   isItSavedNewsPage={isSavedNewsOpen}
-                  key={index}
+                  key={card.link}
                   card={card}
                   saveCard={props.saveCard}
                   isLogin={props.isLogin}
