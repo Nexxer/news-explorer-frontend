@@ -18,7 +18,7 @@ function NewsCard(props) {
 
   const toggleSaveCard = useCallback(() => {
     if (!props.isLogin) {
-      return console.log('error Auth!!!');
+      return props.onAuthClick();
     }
     if (isLiked || isSavedNewsOpen) {
       isLiked = false;
@@ -49,7 +49,7 @@ function NewsCard(props) {
                 : "card__save-btn card__save-btn_login"
               ) : "card__save-btn"
             }
-            disabled={props.isLogin ? false : true} />
+            />
         }
         <a href={link} className="card__link">
           <img id="newsPhoto" className="card__photo" src={image ? image : noPhoto} alt="фото новости" />

@@ -69,6 +69,7 @@ function NewsCardList(props) {
                   isLogin={props.isLogin}
                   savedCardArr={props.saveCardArr}
                   delCard={props.delCard}
+                  onAuthClick={props.onAuthClick}
                 />)
             })}
           </ul>

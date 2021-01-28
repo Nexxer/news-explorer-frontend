@@ -291,6 +291,7 @@ function App() {
             showAndHidePreloader={togglePreloader}
             isNotFoundShown={isNotFound}
             isLogin={isLogin}
+            onAuthClick={handleOpenAuth}
             makelogin={togglelogin}
             resultFromSearch={foundNewsCards}
             searchFailed={isSearchFetchFail}
