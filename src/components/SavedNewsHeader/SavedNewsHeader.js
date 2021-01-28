@@ -2,8 +2,6 @@ import React, { useCallback } from 'react';
 import './SavedNewsHeader.css';
 import { CurrentUserContext } from './../../context/CurrentUserContext';
 import { pluralize } from './../../utils/Pluralize'
-import { sortArrKeyWords } from './../../utils/SortKeyWords'
-
 
 function SavedNewsHeader(props) {
   const currentUser = React.useContext(CurrentUserContext);
@@ -48,7 +46,6 @@ function SavedNewsHeader(props) {
       <h2 className="saved-header__title">Сохранённые статьи</h2>
       <p className="saved-header__subtitle">{`${currentUser.name}${savedText}`}</p>
       <p className="saved-header__text">
-
         {keywordsList.length ? byKeyWordsFragment : ''}
         <b className="saved-news-info__keywords saved-news-info__keywords_accent_bold">
           {firstKeyword} {secondKeyword ? `, ${secondKeyword}` : ''}

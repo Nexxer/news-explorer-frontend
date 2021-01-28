@@ -16,7 +16,6 @@ function SavedNewsPage(props) {
           makelogin={props.makelogin}
           onLogoutClick={props.onLogoutClick}
           closeMenuOnclick={props.closeMenuOnclick}
-
         />
         <SavedNewsHeader
           savedNews={props.savedNews}

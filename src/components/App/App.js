@@ -71,7 +71,6 @@ function App() {
     return `${numericDay} ${letterMonth}, ${numericYear}`;
   };
 
-
   const togglePreloader = useCallback(() => {
     setPreloader(!isPreloader);
   }, [isPreloader]);
@@ -120,9 +119,7 @@ function App() {
                   setLogin(true);
                 }
               })
-              .catch((err) => {
-                console.log(err);
-              });
+              .catch((err) => { console.log(err); });
           } else {
             if (res.statusCode) {
               res.message = 'Переданы некорректные данные';
@@ -130,9 +127,7 @@ function App() {
             showError(res.message);
           }
         })
-        .catch((err) => {
-          console.log({ err });
-        })
+        .catch((err) => { console.log({ err }); })
         .finally(() => { setIsProcessing(false) })
     }, [])
 

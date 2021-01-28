@@ -18,7 +18,7 @@ export const pluralize = (n, { zero, one, few, many, radix, fewMax }) => {
       else pattern = one;
     }
   } else {
-    // числа от 100 и сколько душе угодно
+    // числа от 100 и ...
     const stringNumber = n.toString();
     const newN = +stringNumber.slice(stringNumber.length - 2);
     const newS = Math.floor(newN / radix);
