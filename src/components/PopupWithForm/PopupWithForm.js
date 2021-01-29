@@ -5,21 +5,30 @@ import { useFormWithValidation } from './../../utils/Validation'
 function PopupWithForm(props) {
 
   const [isRegister, setIsRegister] = React.useState(false);
-  const { values, errors, isFormValid, handleInputChange, resetForm } = useFormWithValidation();
+  const { values, errors, isFormValid, handleInputChange, resetForm, setFormError, formError } = useFormWithValidation();
   const { email, password, name } = values;
 
   useEffect(() => {
     resetForm();
   }, [props.isOpen, isRegister, resetForm]);
 
-
   const handleContraryOptionClick = useCallback(() => {
     setIsRegister(!isRegister);
   }, [isRegister]);
 
+  const handleSubmitReg = useCallback((evt) => {
+    evt.preventDefault();
+    props.onRegister(email, password, name);
+  }, [email, password, name, props.onRegister])
+
+  const handleSubmitLogin = useCallback((evt) => {
+    evt.preventDefault();
+    props.onLogin({ email, password }, setFormError);
+  }, [email, password, props.onRegister])
+
   return (
     <div className={`popup ${props.isOpen && `popup_opened`}`} onClick={props.onOverlayAndEscClick}>
-      <form className="popup__form" name={isRegister ? 'Регистрация' : 'Вход'} >
+      <form className="popup__form" name={isRegister ? 'Регистрация' : 'Вход'} onSubmit={isRegister ? handleSubmitReg : handleSubmitLogin} disabled={true}>
         <button type="button" className="popup__btn-close" onClick={props.onClose} />
         <h2 className="popup__title">{isRegister ? 'Регистрация' : 'Вход'}</h2>
         <label className="popup__input-title">Email
@@ -31,6 +40,8 @@ function PopupWithForm(props) {
             name="email"
             placeholder="Введите почту"
             inputMode="email"
+            required={true}
+            disabled={props.reqProcess}
           />
           <span className="popup__error">{errors.email || ''}</span>
         </label>
@@ -45,6 +56,8 @@ function PopupWithForm(props) {
             name="password"
             placeholder="Введите пароль"
             inputMode="search"
+            required={true}
+            disabled={props.reqProcess}
           />
           <span className="popup__error">{errors.password || ''}</span>
         </label>
@@ -60,18 +73,19 @@ function PopupWithForm(props) {
               name="name"
               placeholder="Введите своё имя"
               inputMode="search"
+              required={true}
+              disabled={props.reqProcess}
             />
             <span className="popup__error">{errors.name || ''}</span>
           </label>
 
         }
+        <span className="popup__error">{formError || ''}</span>
         <button
-          type="button"
-          onClick={isRegister ? props.onRegister : props.onLogin}
+          type="submit"
           className={isFormValid ? "popup__btn" : "popup__btn popup__btn_inactive"}
-          disabled={isFormValid}
+          disabled={!isFormValid}
         >
-
           {isRegister ? ' Зарегистрироваться' : 'Войти'}
         </button>
         <p className="contrary">или&nbsp;

@@ -4,8 +4,11 @@ import { NavLink } from 'react-router-dom';
 import exitIcon from '../../images/LogoutLight.svg';
 import exitIconDark from '../../images/LogoutDark.svg';
 import { useLocation } from "react-router-dom";
+import { CurrentUserContext } from './../../context/CurrentUserContext';
+
 
 function Navigation(props) {
+  const currentUser = React.useContext(CurrentUserContext);
   const location = useLocation();
   const handleAuthClick = useCallback(() => {
     props.closeMenuOnclick();
@@ -27,7 +30,7 @@ function Navigation(props) {
       {
         props.isLogin ?
           <button className={props.isFontDark ? "nav-list__btn nav-list__btn_dark" : "nav-list__btn"} onClick={props.onLogoutClick}>
-            Грета
+            {currentUser.name}
             <img className="nav-list__exit" src={props.isFontDark && !props.isMenuShown ? exitIconDark : exitIcon} alt="выйти" />
           </button>
           :
