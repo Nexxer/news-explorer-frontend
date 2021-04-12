@@ -4,10 +4,10 @@ export const getArticlesFromNewsApi = (valueToSearch) => {
   const apiKey = 'cf8f4dfa14654e469bf7dfbbe087ab76';
 
   return fetch(
-    `https://newsapi.org/v2/everything?q=${valueToSearch}&from=${dateFrom}&to=${dateTo}&pageSize=${'100'}&apiKey=${apiKey}`,
+    `https://nomoreparties.co/news/v2/everything?q=${valueToSearch}&from=${dateFrom}&to=${dateTo}&pageSize=${"100"}&apiKey=${apiKey}`,
     {
-      method: 'GET',
-    },
+      method: "GET",
+    }
   ).then((res) => {
     if (res.status) {
       return res.json();
